@@ -22,6 +22,7 @@ const Categories = () => {
 		<CategoriesWrapper>
 			<CategoriesContainer>
 				<Text variant="caption">Categories </Text>
+		<Text cariant="body">Text </Text>
 			</CategoriesContainer>
 		</CategoriesWrapper>
 	);
