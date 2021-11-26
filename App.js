@@ -1,17 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Text, View } from "react-native";
+import styled, { ThemeProvider } from "styled-components";
 
-import { ThemeProvider } from "styled-components";
 import { theme } from "./src/infrastracture/theme";
-
-import styled from "styled-components";
+import { Navigation } from "./src/infrastracture/navigation";
 
 const AppContainer = styled(View)`
 	flex: 1;
-  background-color: ${(props) => props.theme.colors.bg.primary}
-	align-items: center;
-	justify-content: center;
+	background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 const WelcomeText = styled(Text)`
@@ -24,7 +21,7 @@ export default function App() {
 		<>
 			<ThemeProvider theme={theme}>
 				<AppContainer>
-					<WelcomeText>This is going to be a fun project!</WelcomeText>
+					<Navigation />
 					<StatusBar style="auto" />
 				</AppContainer>
 			</ThemeProvider>
