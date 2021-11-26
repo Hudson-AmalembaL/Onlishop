@@ -9,14 +9,13 @@ import styled from "styled-components";
 
 const AppContainer = styled(View)`
 	flex: 1;
+  background-color: ${(props) => props.theme.colors.bg.primary}
+	align-items: center;
 	justify-content: center;
-	background-color: "#fff";
-	align-items: "center";
-	justify-content: "center";
 `;
 
 const WelcomeText = styled(Text)`
-	font-size: 40px;
+	font-size: ${(props) => props.theme.sizes[1]};
 	color: blue;
 `;
 
