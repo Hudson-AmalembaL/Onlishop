@@ -2,6 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Text, View } from "react-native";
 
+import { ThemeProvider } from "styled-components";
+import { theme } from "./src/infrastracture/theme";
+
 import styled from "styled-components";
 
 const AppContainer = styled(View)`
@@ -19,9 +22,13 @@ const WelcomeText = styled(Text)`
 
 export default function App() {
 	return (
-		<AppContainer>
-			<WelcomeText>This is going to be a fun project!</WelcomeText>
-			<StatusBar style="auto" />
-		</AppContainer>
+		<>
+			<ThemeProvider theme={theme}>
+				<AppContainer>
+					<WelcomeText>This is going to be a fun project!</WelcomeText>
+					<StatusBar style="auto" />
+				</AppContainer>
+			</ThemeProvider>
+		</>
 	);
 }
