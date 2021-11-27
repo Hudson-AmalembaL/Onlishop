@@ -1,64 +1,53 @@
 import React from "react";
+import { Ionicons } from "@expo/vector-icons";
+
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Search } from "../components/search.component";
-import { HomeContainer } from "./home.screen.styles";
-import { Ionicons } from "@expo/vector-icons";
-import { View, ScrollView } from "react-native";
-import { Card } from "react-native-paper";
 import { Text } from "../../../components/typography/text.component";
-import styled from "styled-components";
 import { Spacer } from "../../../components/spacer/spacer.component";
-
-const CategoriesWrapper = styled(View)`
-    padding: ${(props) => props.theme.space[3]}
-    flex: 1;
-    `;
-
-const CategoriesContainer = styled(View)`
-	flex: 1;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-`;
-
-const CategoryCard = styled(View)`
-	background-color: ${(props) => props.theme.colors.bg.primary};
-	width: 150px;
-	height: 150px;
-	border-radius: 10px;
-	justify-content: center;
-	align-items: center;
-	margin: 5px;
-`;
+import {
+	HomeContainer,
+	CategoriesWrapper,
+	CategoriesContainer,
+	CategoryScrollView,
+	CategoryCard,
+} from "./home.screen.styles";
 
 const Categories = () => {
 	return (
 		<CategoriesWrapper>
 			<Spacer size="large" position="bottom">
 				<Text variant="caption" style={{ fontSize: 20 }}>
-					Categories{" "}
+					Categories
 				</Text>
 			</Spacer>
 			<CategoriesContainer>
-				<CategoryCard>
-					<Ionicons name="md-checkmark-circle" size={32} color="green" />
-				</CategoryCard>
-				<CategoryCard>
-					<Ionicons name="md-checkmark-circle" size={32} color="green" />
-				</CategoryCard>
-				<CategoryCard>
-					<Ionicons name="md-checkmark-circle" size={32} color="green" />
-				</CategoryCard>
-				<CategoryCard>
-					<Ionicons name="md-checkmark-circle" size={32} color="green" />
-				</CategoryCard>
-				<CategoryCard>
-					<Ionicons name="md-checkmark-circle" size={32} color="green" />
-				</CategoryCard>
-				<CategoryCard>
-					<Ionicons name="md-checkmark-circle" size={32} color="green" />
-				</CategoryCard>
+				<CategoryScrollView>
+					<CategoryCard>
+						<Ionicons name="md-checkmark-circle" size={32} color="green" />
+						<Text>All</Text>
+					</CategoryCard>
+					<CategoryCard>
+						<Ionicons name="md-checkmark-circle" size={32} color="green" />
+						<Text>Electronics</Text>
+					</CategoryCard>
+					<CategoryCard>
+						<Ionicons name="md-checkmark-circle" size={32} color="green" />
+						<Text>Clothing</Text>
+					</CategoryCard>
+					<CategoryCard>
+						<Ionicons name="md-checkmark-circle" size={32} color="green" />
+						<Text>Cars</Text>
+					</CategoryCard>
+					<CategoryCard>
+						<Ionicons name="md-checkmark-circle" size={32} color="green" />
+						<Text>Foods</Text>
+					</CategoryCard>
+					<CategoryCard>
+						<Ionicons name="md-checkmark-circle" size={32} color="green" />
+						<Text>Drinks</Text>
+					</CategoryCard>
+				</CategoryScrollView>
 			</CategoriesContainer>
 		</CategoriesWrapper>
 	);
